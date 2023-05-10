@@ -1,12 +1,10 @@
 package ua.hillel.lesson10;
-
-
 import java.util.Random;
 
-class DeckException {
+class Deck {
     private static final int NUMBER_OF_CARDS = 52;
     private final static int NUM_OF_PLAYERS = 4;
-    private final CardException[] deck = new CardException[NUMBER_OF_CARDS];
+    private final Card[] deck = new Card[NUMBER_OF_CARDS];
     private int currentIndex = 0;
 
     public void createDeck() {
@@ -15,7 +13,7 @@ class DeckException {
         int index = 0;
         for (String suit : suits) {
             for (String value : values) {
-                deck[index++] = new CardException(suit, value);
+                deck[index++] = new Card(suit, value);
             }
         }
     }
@@ -25,22 +23,22 @@ class DeckException {
         for (int i = 0; i < 100; i++) {
             int in = random.nextInt(NUMBER_OF_CARDS);
             int out = random.nextInt(NUMBER_OF_CARDS);
-            CardException tmpCard = deck[in];
+            Card tmpCard = deck[in];
             deck[in] = deck[out];
             deck[out] = tmpCard;
         }
     }
 
-    public void serveCards() throws EmptyDeckException, InvalidCardIndexException {
+    public void serveCards() throws Exceptions.EmptyDeckException, Exceptions.InvalidCardIndexException {
         if (currentIndex >= NUMBER_OF_CARDS) {
-            throw new EmptyDeckException("The deck is empty");
+            throw new Exceptions.EmptyDeckException("The deck is empty");
         }
         for (int round = 1; round <= 5; round++) {
             System.out.println("Round: " + round);
 
             for (int player = 1; player <= NUM_OF_PLAYERS; player++) {
                 if (currentIndex >= NUMBER_OF_CARDS) {
-                    throw new EmptyDeckException("The deck is empty");
+                    throw new Exceptions.EmptyDeckException("The deck is empty");
                 }
                 System.out.println("Player " + player + " gets: " + deck[currentIndex++]);
             }
@@ -50,14 +48,4 @@ class DeckException {
     }
 }
 
-class EmptyDeckException extends Exception {
-    public EmptyDeckException(String message) {
-        super(message);
-    }
-}
 
-class InvalidCardIndexException extends Exception {
-    public InvalidCardIndexException(String message) {
-        super(message);
-    }
-}

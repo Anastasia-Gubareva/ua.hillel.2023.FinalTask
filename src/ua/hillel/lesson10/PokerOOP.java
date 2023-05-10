@@ -1,14 +1,14 @@
 package ua.hillel.lesson10;
 
-public class PokerOOPException {
+public class PokerOOP {
 
     public static void main(String[] args) {
         try {
-            DeckException deck = new DeckException();
+            Deck deck = new Deck();
             deck.createDeck();
             deck.shuffleDeck();
             deck.serveCards();
-        } catch (EmptyDeckException | InvalidCardIndexException e) {
+        } catch (Exceptions.EmptyDeckException | Exceptions.InvalidCardIndexException e) {
             System.out.println(e.getMessage());
         }
     }
