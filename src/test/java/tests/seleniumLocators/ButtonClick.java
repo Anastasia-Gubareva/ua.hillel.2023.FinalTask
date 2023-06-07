@@ -1,5 +1,6 @@
 package tests.seleniumLocators;
 
+import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 import org.openqa.selenium.By;
 import java.util.ArrayList;
@@ -16,11 +17,11 @@ public class ButtonClick  extends BasisTests{
         driver.findElement(By.cssSelector(".button.alert")).click();
         driver.findElement(By.cssSelector(".button.success")).click();
 
-        List<String>  tableValues = new ArrayList<>();
-        for (int i = 1; i < 10; i++) {
-            tableValues.add(driver.findElement(By.xpath("//tr/td[4]")).getText());
+        List<WebElement> tableValues = driver.findElements(By.cssSelector("table tr td:nth-child(4)"));
+
+        for(WebElement tableElement : tableValues) {
+            System.out.println(tableElement.getText());
         }
-        System.out.println(tableValues);
 
     }
 
