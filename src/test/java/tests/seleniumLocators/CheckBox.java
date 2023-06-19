@@ -14,15 +14,15 @@ public class CheckBox extends BasisTests {
         WebElement box2 = driver.findElement(By.xpath("//input[2]"));
 
         if (box1.isSelected()) {
-            System.out.println( "CheckBox1 вибрано");
+            System.out.println( "CheckBox1 обрано");
         } else {
-            System.out.println( "CheckBox1 не виббрано");
+            System.out.println( "CheckBox1 не обрано");
             box1.click();
         }
         if (box2.isSelected()) {
-            System.out.println( "CheckBox2 виббрано");
+            System.out.println( "CheckBox2 обрано");
         } else {
-            System.out.println("CheckBox2 не виббрано");
+            System.out.println("CheckBox2 не обрано");
            box2.click();
         }
     }
