@@ -14,6 +14,10 @@ public class MainPage extends BasePage {
     private WebElement checkboxes;
     @FindBy(linkText = "Hovers")
     private WebElement hovers;
+    @FindBy(linkText = "File Download")
+    private WebElement DownloadFile;
+    @FindBy(linkText = "File Upload")
+    private WebElement UploadFile;
 
     public MainPage(WebDriver driver) {
         super(driver);
@@ -39,5 +43,12 @@ public class MainPage extends BasePage {
         clickButton(hovers);
         return new UserTestHovers(driver);
     }
-
+    public DownloadPage goToDownloadPage(){
+        DownloadFile.click();
+        return  new DownloadPage(driver);
+    }
+    public UploadPage goToUploadPage(){
+        UploadFile.click();
+        return new UploadPage(driver);
+    }
 }
