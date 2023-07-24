@@ -1,16 +1,26 @@
 package tests.pageObject;
 import hillel.pages.MainPage;
+import hillel.listeners.CustomExtentReportListener;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Listeners;
+
 import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
+
+@Listeners({ CustomExtentReportListener.class})
 public class BaseTest {
+
+    static {
+        System.setProperty("extent.reporter.html.start", "true");
+        System.setProperty("extent.reporter.html.out", "target/extentReport/ExtentHtml.html");
+    }
 
     protected WebDriver driver;
 

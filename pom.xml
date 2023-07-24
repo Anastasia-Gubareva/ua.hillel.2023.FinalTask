@@ -24,6 +24,7 @@
         <json.version>20230618</json.version>
         <gson.version>2.10.1</gson.version>
         <lombok.version>1.18.28</lombok.version>
+        <extentReportVersion>1.0.7</extentReportVersion>
     </properties>
 
     <dependencies>
@@ -81,6 +82,20 @@
             <version>${lombok.version}</version>
             <scope>provided</scope>
         </dependency>
+        <!-- Reports -->
+        <dependency>
+            <groupId>com.aventstack</groupId>
+            <artifactId>extentreports-testng-adapter</artifactId>
+            <version>${extentReportVersion}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>7.8.0</version>
+            <scope>compile</scope>
+        </dependency>
+
+
     </dependencies>
 
     <build>
@@ -91,7 +106,7 @@
                 <version>${maven-surefire-plugin.version}</version>
                 <configuration>
                     <suiteXmlFiles>
-                        <suiteXmlFile>src/test/resources/resttestng.xml</suiteXmlFile>
+                        <suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>

@@ -1,12 +1,19 @@
 package tests.seleniumLocators;
 
+import hillel.listeners.CustomExtentReportListener;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Listeners;
 
+@Listeners(CustomExtentReportListener.class)
 public class BasisTests {
+    static {
+        System.setProperty("extent.reporter.html.start", "true");
+        System.setProperty("extent.reporter.html.out", "target/extentReport/ExtentHtml.html");
+    }
 
     WebDriver driver = new ChromeDriver();
     @BeforeTest
