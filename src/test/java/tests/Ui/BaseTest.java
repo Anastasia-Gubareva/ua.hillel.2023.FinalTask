@@ -1,12 +1,11 @@
-package tests.ui;
+package tests.Ui;
 
 import com.codeborne.selenide.Configuration;
 import hillel.Ui.MainPage;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
-import tests.ui.listeners.CustomExtentReportListener;
-
+import tests.Ui.listener.CustomExtentReportListener;
 import static com.codeborne.selenide.Selenide.closeWindow;
 import static com.codeborne.selenide.Selenide.open;
 

@@ -1,4 +1,4 @@
-package tests.ui;
+package tests.Ui;
 
 import com.codeborne.selenide.WebDriverRunner;
 import hillel.Ui.MainPage;
@@ -6,7 +6,6 @@ import hillel.Ui.ProfilePage;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
 import java.util.Random;
 
 public class UiTest extends BaseTest {
