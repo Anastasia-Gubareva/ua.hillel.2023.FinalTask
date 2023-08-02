@@ -1,23 +1,16 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 
 
-<suite name="Suite1" verbose="1" >
-    <test name="Test 1" >
-        <classes>
-            <class name="tests.testNG.LoginTest" />
-        </classes>
+<suite name="Suite1" verbose="1">
+    <test name="Tests">
+
+
+        <packages>
+            <package name="tests.api"></package>
+            <package name="tests.ui"></package>
+        </packages>
+
     </test>
 
-    <test name="Test 2">
-        <classes>
-            <class name="tests.testNG.FailedLoginTest"/>
-        </classes>
-    </test>
-    <test name="Test 3" >
-        <parameter name="url" value="Google.com"/>
-        <parameter name = "Chrome=" value = "Chrome"/>
-        <classes>
-            <class name="tests.testNG.ParametersTest" />
-        </classes>
-    </test>
+
 </suite>
